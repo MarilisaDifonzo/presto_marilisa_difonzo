@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
 use App\Models\Article;
+use App\Models\Category;
 
 class ArticleController extends Controller implements HasMiddleware
 {
