@@ -29,21 +29,23 @@ class CreateArticleForm extends Component
 
     }
 
-    public function store()
-    {
-        $this->validate();
-        $this->article = Article::create([
-            'title' => $this->title,
-            'description' => $this->description,
-            'price' => $this->price,
-            'category_id' => $this->category,
-            'user_id' => Auth::id()
-            
-        ]);
-        $this->cleanForm();
-        session()->flash('success', 'Articolo creato correttamente');
-        
-    }
+public function store()
+{
+    $this->validate();
+
+    $this->article = Article::create([
+        'title' => $this->title,
+        'description' => $this->description,
+        'price' => $this->price,
+        'category_id' => $this->category,
+        'user_id' => Auth::id(),
+    ]);
+
+    $this->cleanForm();
+
+    session()->flash('success', 'Articolo creato correttamente');
+}
+
     public function render()
     {
         return view('livewire.create-article-form', [

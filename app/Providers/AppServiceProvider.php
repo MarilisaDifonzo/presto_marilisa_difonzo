@@ -29,8 +29,4 @@ class AppServiceProvider extends ServiceProvider
         }
     }
 
-    public function show(Article $article)
-    {
-        return view('article.show', compact('article'));
-    }
 }

@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     @vite (['resources/css/app.css', 'resources/js/app.js'])
+
+    @livewireStyles
+   
+
     <title>Presto</title>
 </head>
 <body>
+
     <x-navbar />
 
     <div class="min-vh-100">
-    {{ $slot }}
-</div>
-<x-footer />
-    
+        {{ $slot }}
+    </div>
+
+    <x-footer />
+
+    @livewireScripts
+
 </body>
 </html>
 

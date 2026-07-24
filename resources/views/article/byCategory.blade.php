@@ -8,14 +8,15 @@
 <div class="row height-custom justify-content-center align-items-center py-5">
     @forelse ($articles as $article)
     <div class="col-12 col-md-3">
-        <x-card:article="$article" />
+        <x-card :article="$article" />
 </div>
 @empty
 <div class="col-12 text-center">
     <h3>
         Non sono ancora stati creati articoli per questa categoria!
 </h3>
-@array_unshift<a class="btn btn-dark my-5" href="{{route('create.article)}}"> Pubblica un articolo</a>
+@auth
+<a class="btn btn-dark my-5" href="{{route('create.article')}}"> Pubblica un articolo</a>
 @endauth
 </div>
 @endforelse
