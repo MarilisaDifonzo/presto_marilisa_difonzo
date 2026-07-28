@@ -64,7 +64,16 @@
 </li>
 @endauth
 </ul>
-        
+@auth
+@if (Auth::user()->is_revisor)
+<li class="nav-item"> 
+    <a class="nav-link btn btn-outline-success btn-sm position-relative w-sm-25" href="{{ route('revisor.index') }}"> Zona revisore
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ \App\Models\Article::toBeRevisedCount() }}
+</span>
+</a>
+</li>
+@endif
+@endauth
 </div>
     </div>
 </nav>
