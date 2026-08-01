@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Laravel\Scout\Searchable;
+use App\Models\Image;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Article extends Model
 {
@@ -13,7 +15,7 @@ class Article extends Model
 
     use HasFactory;
     protected $fillable = [
-        'title', 'description', 'price', 'category_id', 'user_id'
+        'title', 'description', 'price', 'category_id', 'user_id', 'is_accepted'
     ];
 
     public function user(): BelongsTo
@@ -43,7 +45,13 @@ class Article extends Model
             'id'=>$this->id,
             'title'=>$this->title,
             'description'=>$this->description,
-            'category'=>$this->category
+             'category' => $this->category->name ?? '',
+            
         ];
+    }
+
+    public function images(): HasMany
+    {
+        return $this->hasMany(Image::class);
     }
 }

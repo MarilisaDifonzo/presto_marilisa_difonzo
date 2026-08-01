@@ -9,7 +9,6 @@ class PublicController extends Controller
 {
     public function homepage()
     {
-
     $articles=Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(6)->get();
     return view('welcome', compact('articles'));
     }
@@ -19,5 +18,24 @@ class PublicController extends Controller
         session()->put('locale', $lang);
         return redirect()->back();
     }
+
+public function searchArticles(Request $request)
+{
+    $query = $request->input('query');
+
+    $articles = Article::search($query)
+        ->paginate(10);
+
+    $articles->setCollection(
+        $articles->getCollection()
+            ->where('is_accepted', true)
+    );
+
+    return view('article.searched', [
+        'articles' => $articles,
+        'query' => $query,
+    ]);
+}
+
 
 }
