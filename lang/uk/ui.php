@@ -14,13 +14,18 @@ return [
     'publish_article' => 'Publish Article',
     'revisor' => 'Reviewer Area',
     'noArticlesYet' => 'No articles have been created yet',
+    'publishArticle' => 'Publish an article',
 
     // categories
-    'sport' => 'Sport',
-    'politica' => 'Politics',
-    'economia' => 'Economy',
-    'tech' => 'Tech',
-    'intrattenimento' => 'Entertainment',
-    'food&drink' => 'Food & Drink',
+   'Abbigliamento' => 'Clothing',
+   'Accessori' => 'Accessories',
+   'Animali Domestici' => 'Pets',
+   'Casa e Giardinaggio' => 'Home and gardening',
+   'Elettronica' => 'Electronics',
+   'Giocattoli' => 'Toys',
+   'Libri e Riviste' => 'Books and magazines',
+   'Motori' => 'Motors',
+   'Salute e Bellezza' => 'Health and beauty',
+   'Sport' => 'Sports',
 
 ];

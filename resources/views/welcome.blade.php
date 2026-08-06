@@ -5,7 +5,7 @@
                 <h1 class="display-4"> Presto.it </h1>
                 <div class="my-3">
                     @auth 
-                    <a class="btn btn-dark" href=" {{ route('create.article') }}">Pubblica un articolo</a>
+                    <a class="btn btn-dark" href=" {{ route('create.article') }}">{{ __('ui.publishArticle') }}</a>
                     @endauth
                     <div class="row height-custom justify-content-center align-items-center py-5">
                     @forelse ($articles as $article)
