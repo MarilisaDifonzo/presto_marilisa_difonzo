@@ -13,8 +13,9 @@ class Image extends Model
     use HasFactory;
 
     protected $fillable = [
-        'path'
-    ];
+        'path',
+];
+
 
     public function article() : BelongsTo
     {

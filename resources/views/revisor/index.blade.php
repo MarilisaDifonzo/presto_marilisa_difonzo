@@ -18,7 +18,7 @@
             <div class="row justify-content-center">
 
                 @if ($article_to_check->images->count())
-
+            
                     @foreach ($article_to_check->images as $key => $image)
 
                         <div class="col-6">
@@ -27,9 +27,9 @@
                                 <div class="row g-0">
 
                                     <div class="col-md-4">
-                                        <img src="{{ $image->getUrl(300,300) }}" 
-                                             class="img-fluid rounded-start" 
-                                             alt="Immagine {{ $key + 1 }} dell'articolo '{{ $article_to_check->title }}'">
+                                    <img src="{{ $image->getUrl() }}" 
+     class="img-fluid rounded-start" 
+     alt="Immagine {{ $key + 1 }} dell'articolo '{{ $article_to_check->title }}'">
                                     </div>
 
 
